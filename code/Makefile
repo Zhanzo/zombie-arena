@@ -1,18 +1,16 @@
 LIBS=-lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+CXX := g++
 
 all: ZombieArena
 
-Player.o:
-	g++ -std=c++11 -c Player.cpp -o Player.o
+%.o: %.cpp
+	$(CXX) -c $< -o $@
 
-ZombieArena.o: ZombieArena.cpp
-	g++ -std=c++11 -c ZombieArena.cpp -o ZombieArena.o
+%.o: %.hpp
+	$(CXX) -c $< -o $@
 
-ZombieArena: ZombieArena.o
-	g++ -o ZombieArena ZombieArena.o $(LIBS)
-
-run:
-	./ZombieArena
+ZombieArena: ZombieArena.o Player.o
+	$(CXX) -o ZombieArena ZombieArena.o Player.o $(LIBS)
 
 clean:
 	@echo "Removing files"

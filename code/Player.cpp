@@ -1,5 +1,5 @@
-#include "stdafx.h"
-#include "player.h"
+#include "Player.hpp"
+#include <cmath>
 
 Player::Player() {
   m_Speed = START_SPEED;
@@ -8,7 +8,7 @@ Player::Player() {
 
   // Associate a tecture with the sprite
   m_Texture.loadFromFile("../graphics/player.png");
-  m_sprite.setTexture(m_Texture);
+  m_Sprite.setTexture(m_Texture);
 
   // Set the origin of the sprite to the center, for smooth rotation
   m_Sprite.setOrigin(25, 25);
@@ -86,7 +86,7 @@ void Player::moveUp() {
 }
 
 void Player::moveDown() {
-  m_Down_Pressed = true;
+  m_DownPressed = true;
 }
 
 void Player::stopLeft() {
@@ -159,7 +159,7 @@ void Player::upgradeHealth() {
   m_MaxHealth += (START_HEALTH * 0.2);
 }
 
-void player::increaseHealthLevel(int amount) {
+void Player::increaseHealthLevel(int amount) {
   m_Health += amount;
 
   // But not beyond the maximum
