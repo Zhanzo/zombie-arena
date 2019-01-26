@@ -10,7 +10,7 @@ all: ZombieArena
 	$(CXX) -c $< -o $@
 
 ZombieArena: ZombieArena.o Player.o
-	$(CXX) -o ZombieArena ZombieArena.o Player.o $(LIBS)
+	$(CXX) -o ZombieArena ZombieArena.o Player.o CreateBackground.o $(LIBS)
 
 clean:
 	@echo "Removing files"
