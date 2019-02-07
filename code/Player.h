@@ -3,7 +3,8 @@
 
 using namespace sf;
 
-class Player {
+class Player
+{
   const float START_SPEED = 200;
   const float START_HEALTH = 100;
   // Where is the player?
@@ -43,7 +44,7 @@ class Player {
   // SPeed in pixels per second
   float m_Speed;
 
- public:
+public:
   Player();
   void spawn(IntRect arena, Vector2f resolution, int tileSize);
 

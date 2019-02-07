@@ -6,11 +6,11 @@ all: ZombieArena
 %.o: %.cpp
 	$(CXX) -c $< -o $@
 
-%.o: %.hpp
+%.o: %.h
 	$(CXX) -c $< -o $@
 
-ZombieArena: ZombieArena.o Player.o
-	$(CXX) -o ZombieArena ZombieArena.o Player.o CreateBackground.o $(LIBS)
+ZombieArena: ZombieArena.o Player.o CreateBackground.o Zombie.o TextureHolder.o CreateHorde.o
+	$(CXX) -o ZombieArena ZombieArena.o Player.o CreateBackground.o Zombie.o TextureHolder.o CreateHorde.o $(LIBS)
 
 clean:
 	@echo "Removing files"
