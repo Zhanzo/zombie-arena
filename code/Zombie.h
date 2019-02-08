@@ -47,7 +47,7 @@ public:
   void spawn(float startX, float startY, int type, int seed);
 
   // Return the rectangle that is the position in the world
-  FloatRect gerPosition();
+  FloatRect getPosition();
 
   // Get a copy of the sprite to draw
   Sprite getSprite();
